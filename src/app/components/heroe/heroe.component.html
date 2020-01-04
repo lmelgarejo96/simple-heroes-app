@@ -1,0 +1,33 @@
+<div class="container pt-5">
+  <h1 class="animation fadeIn fast"> {{ heroe.nombre | uppercase }} <small>({{ heroe.aparicion | date:'y' }})</small>
+  </h1>
+  <hr>
+  <div class="row animation fadeIn fast">
+    <div class="col-md-4">
+      <img [src]="heroe.img" alt="{{heroe.nombre}}" class="img-fluid">
+      <br><br>
+      <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Retornar</a>
+  
+        <div class="row " style="padding-left: 15px; padding-right: 15px;">
+          <!-- <div class="mr-1 mt-1">
+            <button class="btn btn-outline-primary"><i class="material-icons">edit</i></button>
+          </div> -->
+          <div class="mt-1">
+            <button class="btn btn-outline-danger"><i class="material-icons" (click)="deleteHero()" >delete</i></button>
+          </div>
+        </div>
+ 
+    </div>
+    <div class="col-md-8">
+      <h4> {{ heroe.nombre }} </h4>
+      <hr>
+      <p> {{ heroe.bio }} </p>
+      <p>Fecha de aparición: <strong> {{  heroe.aparicion }} </strong></p>
+      <div>
+        <img class="img-logo" src="assets/img/{{heroe.casa}}.png" alt=" {{ heroe.nombre }} ">
+      </div>
+    </div>
+    
+
+  </div>
+</div>

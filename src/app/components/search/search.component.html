@@ -1,0 +1,19 @@
+<div class="container" style="margin-top: 100px;">
+
+    <!-- Title -->
+    <div class="row">
+    <div class="col-md-10">
+        <h1>Heroes <small>Marvel y DC encontrado(s) : {{ cantidad }}</small></h1>
+    </div>
+    </div>
+
+    <!-- Linea division -->
+
+    <hr>
+    <hr>
+    <!-- *ngFor heroes -->
+    <div class="card-columns">
+        <app-heroe-tarjeta *ngFor="let heroe of heroes; let i = index;" [heroe]="heroe"></app-heroe-tarjeta>
+    </div>
+    
+</div>

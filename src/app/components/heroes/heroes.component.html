@@ -1,0 +1,91 @@
+<div class="container" style="margin-top: 100px;">
+  <!-- Title -->
+  <div class="row">
+    <div class="col-md-10">
+      <h1>Heroes <small>Marvel y DC</small></h1>
+    </div>
+    <div class="col-md-2 mt-2">
+      <button class="btn btn-success btn-block" data-toggle="modal" data-target="#modalAgregar"> 
+        <i class="large material-icons">add</i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal Agregar -->
+  <div class="modal fade" id="modalAgregar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Nuevo Heroe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="addForm" class="was-validated needs-validation" novalidate>
+            <div class="form-group row">
+              <label for="input-Hero" class="col-sm-2 col-form-label">Heroe</label>
+              <div class="col-sm-10">
+                <select class="custom-select is-invalid" id="input-Hero" required>
+                  <option value="assets/img/thor.png">Thor</option>
+                  <option value="assets/img/flash.png">Flash</option>
+                  <option value="assets/img/capitan.png">Capitan America</option>
+                  <option value="assets/img/mera.png">Mera</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a hero in the input.
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-Fecha" class="col-sm-2 col-form-label"> Aparición</label>
+              <div class="col-sm-10">
+                <input id="fecha-hero" type="text" class="form-control is-invalid" id="input-Fecha" placeholder="2019-11-01" required>
+                <div class="invalid-feedback">
+                  Please enter a fecha in the input.
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="input-Home" class="col-sm-2 col-form-label"> Casa </label>
+              <div class="col-sm-10">
+                <select class="custom-select is-invalid" id="input-Home" required>
+                  <option value="DC">Casa DC</option>
+                  <option value="Marvel">Casa Marvel</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a home in the input.
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="validationTextarea" class="col-sm-2 col-form-label">Bio</label>
+              <div class="col-sm-10">
+                <textarea class="form-control is-invalid" id="validationTextarea" aria-describedby="validationTextarea" placeholder="Insert a bio" required></textarea>
+                <div class="invalid-tooltip">
+                  Please enter a bio in the textarea.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-outline-success" data-dismiss="modal" (click) = "saveHero()" >Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Linea division -->
+
+  <hr>
+  <hr>
+  <!-- *ngFor heroes -->
+  <div class="card-columns">
+   <!--  *ngFor="let heroe of heroes; let i = index;" -->
+
+    <app-heroe-tarjeta *ngFor="let heroe of heroes; let i = index;" [heroe]="heroe" [index]="i" ></app-heroe-tarjeta>
+    <!-- (heroSelected)=" verHeroe($event) " -->
+  </div>
+</div>
