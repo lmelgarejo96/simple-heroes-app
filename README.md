@@ -1,8 +1,13 @@
 # AngularBasicSpa
 
+<<<<<<< HEAD
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21 + bootstrap.
 
 I will soon finish the whole crud
+=======
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+I will soon finish the whole crud..
+>>>>>>> d83b3cb54b236398b9339641c192ae5c32d240d8
 
 ## Development server
 
